@@ -1,0 +1,9 @@
+sdk项目路径(必须要有)：C:\Users\Hello\Desktop\ShanHuReport\MyDemo
+
+是否为测试模式(true/false)：false
+
+app key（默认值：0QY40DHLM2J08XXCDDS63A34）：
+
+原生广告id（默认值：17916_65526）：
+
+激励广告id（默认值：17916_29418）：
