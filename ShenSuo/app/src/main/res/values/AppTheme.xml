@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyTheme" parent="AppTheme">
+        <item name="android:actionBarSize">40dp</item>
+        <item name="colorPrimary">#C7C6C6</item>
+        <item name="colorPrimaryDark">#B6B4B4</item>
+        <!--这个item是设置全局的焦点的颜色值-->
+        <item name="colorAccent">#E6E2E2</item>
+    </style>
+</resources>

@@ -1,0 +1,1 @@
+include ':app', ':view_animation', ':property_animation', ':property_animation_interpolator'

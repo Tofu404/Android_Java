@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">简单游戏登陆</string>
+    <string name="welcome">欢迎来到我的游戏空间！</string>
+    <string name="signUp">登陆</string>
+    <string name="logIn">注册</string>
+    <string name="forgetPassword">忘记密码</string>
+</resources>

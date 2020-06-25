@@ -1,0 +1,1 @@
+include ':app', ':myservice', ':musicservice', ':binder_service'

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">计时器</string>
+    <string name="restart">重新开始</string>
+</resources>

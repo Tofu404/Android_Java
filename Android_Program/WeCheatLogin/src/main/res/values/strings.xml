@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">微信登陆页面</string>
+    <string name="userId_tips">手机号/QQ号/Email</string>
+    <string name="password_tips">请输入8~12位的密码</string>
+    <string name="LoginProblem">登陆遇到问题？</string>
+    <string name="loginBut">登陆</string>
+</resources>

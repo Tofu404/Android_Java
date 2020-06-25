@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ComponentName</string>
+    <string name="button_text">点击按钮进行Activity的跳转</string>
+</resources>

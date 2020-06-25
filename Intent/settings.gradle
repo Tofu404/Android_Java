@@ -1,0 +1,1 @@
+include ':app', ':componentname', ':intent_data', ':category', ':flag', ':intent_filter', ':key_dowm_even', ':longpressevent', ':touchevent', ':toucheventandclickevent'

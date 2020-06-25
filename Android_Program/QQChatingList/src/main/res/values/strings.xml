@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">用文本框实现QQ聊天</string>
+    <string name="text1">你好吗？进来是不是过的不好啊？</string>
+    <string name="text2">没有啊！近来还是挺可以的，我没有什么特别的事情发生</string>
+    <string name="text3">我好想念你啊，你什么时候回来，我们就可以再一起去玩耍啦！</string>
+    <string name="text4">我过几天就要回来了，等我一下，我们一起去蹦迪！</string>
+</resources>

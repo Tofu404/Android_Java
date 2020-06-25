@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--推荐词列表-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:overScrollMode="never"
+        android:id="@+id/suggest_word_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <!--专辑列表-->
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+        android:id="@+id/album_list_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:overScrollMode="never"
+            android:id="@+id/search_album_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+    <!--热词列表-->
+    <com.tianze.xiangting.views.FlowTextLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/hot_word_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

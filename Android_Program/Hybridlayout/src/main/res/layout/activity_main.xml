@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="88dp"
+            android:layout_height="81dp"
+            android:src="@mipmap/touxiang" />
+        <TextView
+            android:id="@+id/userNameText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="孔天泽"
+            android:layout_toRightOf="@id/image1"
+            android:textSize="20sp"
+            android:layout_marginStart="5dp"
+            />
+        <TextView
+            android:id="@+id/content1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="这是我的一个非常好玩的东西，希望你也喜欢！"
+            android:textSize="20sp"
+            android:layout_below="@id/userNameText1"
+            android:layout_toEndOf="@id/image1"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginStart="5dp"
+            android:minLines="3"
+            />
+        <TextView
+            android:id="@+id/time1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="今天"
+            android:textSize="15sp"
+            android:layout_marginStart="5dp"
+            android:layout_below="@+id/content1"
+            android:layout_toRightOf="@id/image1"
+            />
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000"
+        android:src="@mipmap/line" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="88dp"
+            android:layout_height="81dp"
+            android:src="@mipmap/touxiang" />
+        <TextView
+            android:id="@+id/userNameText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="孔天泽"
+            android:layout_toRightOf="@id/image2"
+            android:textSize="20sp"
+            android:layout_marginStart="5dp"
+            />
+        <TextView
+            android:id="@+id/content2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="生活就像海洋只意志坚定的人才能到达幸福的彼岸！所以我们要努力奋斗啊！天天记得撸代码喽，哈哈哈哈哈哈哈哈哈！啊哈哈哈哈哈哈哈哈哈哈"
+            android:textSize="20sp"
+            android:layout_below="@id/userNameText2"
+            android:layout_toEndOf="@id/image2"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginStart="5dp"
+            android:minLines="2"
+            />
+        <TextView
+            android:id="@+id/time2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="今天"
+            android:textSize="15sp"
+            android:layout_marginStart="5dp"
+            android:layout_below="@+id/content2"
+            android:layout_toRightOf="@id/image2"
+            />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000"
+        android:src="@mipmap/line" />
+
+</LinearLayout>

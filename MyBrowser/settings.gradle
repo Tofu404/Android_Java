@@ -1,0 +1,3 @@
+include ':emotionalhouse'
+include ':app'
+rootProject.name = "MyBrowser"

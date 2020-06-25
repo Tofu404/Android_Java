@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="0,3"
+    tools:context=".MainActivity">
+
+    <TableRow android:paddingTop="300dp">
+        <TextView />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/userId"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            />
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="邮箱/手机号"
+            android:inputType="" />
+        <TextView />
+    </TableRow>
+
+    <TableRow>
+        <TextView />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/password"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            />
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="@string/hint_text"
+            android:textSize="20sp"
+            android:inputType="" />
+        <TextView />
+    </TableRow>
+
+    <TableRow >
+
+        <TextView />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:textSize="20sp"
+            />
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/sign_up"
+            android:textSize="20sp"
+            />
+
+        <TextView />
+
+    </TableRow>
+
+    <TableRow android:padding="5dp">
+        <TextView />
+        <TextView />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/forger_password"
+            android:textSize="20sp"
+            android:layout_gravity="bottom|end"
+            android:textColor="#339329"
+            />
+        <TextView />
+    </TableRow>
+
+</TableLayout>

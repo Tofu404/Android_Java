@@ -1,0 +1,1 @@
+include ':app', ':float_labeled_edit_text', ':down_and_up', ':float_edit_text', ':fragmenttest', ':clickabletext', ':broadcasttest', ':mybutton', ':passwordbulider', ':view_location'

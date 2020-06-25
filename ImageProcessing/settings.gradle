@@ -1,0 +1,1 @@
+include ':app', ':draw_a_rectangle', ':drawtext', ':drawbitmap', ':drawpath', ':animation', ':tweenanimation', ':switchpicture'

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">享听</string>
+    <string name="subscription_btn">+订阅</string>
+    <string name="select_track">选集</string>
+    <string name="close_popup_window">关闭</string>
+    <string name="click_to_play">点击播放</string>
+    <string name="search_text">搜索</string>
+    <string name="please_enter_key_world">请输入搜索内容</string>
+    <string name="me_description">我</string>
+</resources>

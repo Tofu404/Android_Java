@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="欢迎使用神锁离线版App！\n"
+        android:textSize="18sp"
+        android:textColor="#000"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="为使用神锁离线版App，您应当仔细阅读并严格遵守以下使用协议。以下使用协议对您使用我们的App做出了一些规定。使用我们的App,即表示您同意接收这些协议。\n"
+        android:textSize="18sp"
+        android:textColor="#000"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="您的责任\n"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#000"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="您需要对自己的行为负责，且必须遵守以下行为规范："
+        android:textSize="18sp"
+        android:textColor="#000"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="·使用我们的App必须年满4岁"
+        android:textSize="18sp"
+        android:textColor="#000"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="·不得干扰神锁离线版的正常运行"
+        android:textSize="18sp"
+        android:textColor="#000"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="·不得以任何方式违反法律，包括存储非法的文件和数据"
+        android:textSize="18sp"
+        android:textColor="#000"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="·不得在未经过我们的允许下进行任何形式的销售服务。\n"
+        android:textSize="18sp"
+        android:textColor="#000"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="帮助我们保护您的账号密码，妥善保管你的手机"
+        android:textSize="18sp"
+        android:textColor="#000"
+        />
+
+</LinearLayout>
