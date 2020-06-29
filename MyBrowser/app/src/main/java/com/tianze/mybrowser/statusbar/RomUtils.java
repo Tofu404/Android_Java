@@ -13,6 +13,7 @@ import java.util.Properties;
  */
 
 public class RomUtils {
+
     static class AvailableRomType {
         public static final int MIUI = 1;
         public static final int FLYME = 2;
