@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MyButton">
+        <attr name="radius" format="integer"/>
+        <attr name="bg_color" format="color"/>
+    </declare-styleable>
+
+</resources>

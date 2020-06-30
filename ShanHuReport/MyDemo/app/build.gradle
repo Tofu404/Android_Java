@@ -21,12 +21,48 @@ android {
     productFlavors {
 
         myApp1 {
-            applicationId "nihao.com"
+            applicationId "com.hh.beikemm"
             buildConfigField 'boolean', 'TEST_MODE', 'true'
             buildConfigField 'String', 'APPKEY', '"0QY40DHLM2J08XXCDDS63A34"'
             buildConfigField 'String', 'NATIVEADID', '"17916_65526"'
             buildConfigField 'String', 'REWARDADID', '"17916_29418"'
             manifestPlaceholders = [app_name: "第1个app"]
+        }
+
+        myApp2 {
+            applicationId "com.boshide.kingbeans"
+            buildConfigField 'boolean', 'TEST_MODE', 'true'
+            buildConfigField 'String', 'APPKEY', '"0QY40DHLM2J08XXCDDS63A34"'
+            buildConfigField 'String', 'NATIVEADID', '"17916_65526"'
+            buildConfigField 'String', 'REWARDADID', '"17916_29418"'
+            manifestPlaceholders = [app_name: "第2个app"]
+        }
+
+        myApp3 {
+            applicationId "com.bcxgame.lw.dzfhd"
+            buildConfigField 'boolean', 'TEST_MODE', 'true'
+            buildConfigField 'String', 'APPKEY', '"0QY40DHLM2J08XXCDDS63A34"'
+            buildConfigField 'String', 'NATIVEADID', '"17916_65526"'
+            buildConfigField 'String', 'REWARDADID', '"17916_29418"'
+            manifestPlaceholders = [app_name: "第3个app"]
+        }
+
+        myApp4 {
+            applicationId "com.tyrell.game.zt.cygs2"
+            buildConfigField 'boolean', 'TEST_MODE', 'true'
+            buildConfigField 'String', 'APPKEY', '"0QY40DHLM2J08XXCDDS63A34"'
+            buildConfigField 'String', 'NATIVEADID', '"17916_65526"'
+            buildConfigField 'String', 'REWARDADID', '"17916_29418"'
+            manifestPlaceholders = [app_name: "第4个app"]
+        }
+
+        myApp5 {
+            applicationId "com.walk.moneycome.bodyhealth"
+            buildConfigField 'boolean', 'TEST_MODE', 'true'
+            buildConfigField 'String', 'APPKEY', '"0QY40DHLM2J08XXCDDS63A34"'
+            buildConfigField 'String', 'NATIVEADID', '"17916_65526"'
+            buildConfigField 'String', 'REWARDADID', '"17916_29418"'
+            manifestPlaceholders = [app_name: "第5个app"]
         }
 
     }
