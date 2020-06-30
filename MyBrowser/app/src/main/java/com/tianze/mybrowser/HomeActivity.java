@@ -165,7 +165,6 @@ public class HomeActivity extends BaseActivity implements BookMarkAdapter.OnBook
         switch (item.getItemId()) {
             case 1:
                 Toast.makeText(this, "编辑", Toast.LENGTH_SHORT).show();
-                //todo:给出弹窗
                 break;
             case 2:
                 BookMarkMng.deleteBookMark(currnetBookMark);

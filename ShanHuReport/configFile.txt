@@ -1,6 +1,6 @@
-sdk项目路径(必须要有)：C:\Users\Hello\Desktop\ShanHuReport\MyDemo
+sdk项目路径(必须要有)：:\Android_Java\ShanHuReport\MyDemo
 
-是否为测试模式(true/false)：false
+是否为测试模式(true/false)：true
 
 app key（默认值：0QY40DHLM2J08XXCDDS63A34）：
 

@@ -21,39 +21,12 @@ android {
     productFlavors {
 
         myApp1 {
-            applicationId "com.dcxs100.star"
-            buildConfigField 'boolean', 'TEST_MODE', 'false'
+            applicationId "nihao.com"
+            buildConfigField 'boolean', 'TEST_MODE', 'true'
             buildConfigField 'String', 'APPKEY', '"0QY40DHLM2J08XXCDDS63A34"'
             buildConfigField 'String', 'NATIVEADID', '"17916_65526"'
             buildConfigField 'String', 'REWARDADID', '"17916_29418"'
             manifestPlaceholders = [app_name: "第1个app"]
-        }
-
-        myApp2 {
-            applicationId "com.zhl.fuckvideo"
-            buildConfigField 'boolean', 'TEST_MODE', 'false'
-            buildConfigField 'String', 'APPKEY', '"0QY40DHLM2J08XXCDDS63A34"'
-            buildConfigField 'String', 'NATIVEADID', '"17916_65526"'
-            buildConfigField 'String', 'REWARDADID', '"17916_29418"'
-            manifestPlaceholders = [app_name: "第2个app"]
-        }
-
-        myApp3 {
-            applicationId "com.gzyike.painting"
-            buildConfigField 'boolean', 'TEST_MODE', 'false'
-            buildConfigField 'String', 'APPKEY', '"0QY40DHLM2J08XXCDDS63A34"'
-            buildConfigField 'String', 'NATIVEADID', '"17916_65526"'
-            buildConfigField 'String', 'REWARDADID', '"17916_29418"'
-            manifestPlaceholders = [app_name: "第3个app"]
-        }
-
-        myApp4 {
-            applicationId "com.gzyike.color.by.number"
-            buildConfigField 'boolean', 'TEST_MODE', 'false'
-            buildConfigField 'String', 'APPKEY', '"0QY40DHLM2J08XXCDDS63A34"'
-            buildConfigField 'String', 'NATIVEADID', '"17916_65526"'
-            buildConfigField 'String', 'REWARDADID', '"17916_29418"'
-            manifestPlaceholders = [app_name: "第4个app"]
         }
 
     }

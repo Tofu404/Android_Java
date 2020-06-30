@@ -1,14 +1,13 @@
 package com.tianze.mybrowser;
 
+import android.animation.Keyframe;
 import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.content.Context;
 import android.graphics.drawable.PaintDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
-import android.view.animation.Animation;
-import android.view.animation.BounceInterpolator;
-import android.view.animation.RotateAnimation;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
@@ -27,7 +26,7 @@ public class MyPopupWindow extends PopupWindow {
     private TextView mLogout;
     private ConstraintLayout mUserLogin;
     private TextView mIntoTheNewWord;
-    private Animation mRotateAnimation;
+    private ObjectAnimator mAnimator;
 
     //空构造方法
     public MyPopupWindow(Context context, int width, int height) {
@@ -46,10 +45,52 @@ public class MyPopupWindow extends PopupWindow {
     }
 
     private void initAnimation() {
-        mRotateAnimation = new RotateAnimation(0f,20f,Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
-        mRotateAnimation.setInterpolator(new BounceInterpolator());
-        mRotateAnimation.setRepeatCount(-1);
-        mRotateAnimation.setDuration(1000);
+
+        PropertyValuesHolder rotationHolder = PropertyValuesHolder.ofKeyframe(View.ROTATION,
+                Keyframe.ofFloat(0.0f, 4f),
+                Keyframe.ofFloat(0.1f, -4f),
+                Keyframe.ofFloat(0.2f, 4f),
+                Keyframe.ofFloat(0.3f, -4f),
+                Keyframe.ofFloat(0.4f, 4f),
+                Keyframe.ofFloat(0.5f, -4f),
+                Keyframe.ofFloat(0.6f, 4f),
+                Keyframe.ofFloat(0.7f, -4f),
+                Keyframe.ofFloat(0.8f, 4f),
+                Keyframe.ofFloat(0.9f, -4f),
+                Keyframe.ofFloat(1.0f, 4f)
+        );
+
+        PropertyValuesHolder scaleXHolder = PropertyValuesHolder.ofKeyframe(View.SCALE_X,
+                Keyframe.ofFloat(0.0f, 1.0f),
+                Keyframe.ofFloat(0.1f, 1.01f),
+                Keyframe.ofFloat(0.2f, 1.01f),
+                Keyframe.ofFloat(0.3f, 1.02f),
+                Keyframe.ofFloat(0.4f, 1.02f),
+                Keyframe.ofFloat(0.5f, 1.03f),
+                Keyframe.ofFloat(0.6f, 1.01f),
+                Keyframe.ofFloat(0.7f, 1.01f),
+                Keyframe.ofFloat(0.8f, 1.02f),
+                Keyframe.ofFloat(0.9f, 1.02f),
+                Keyframe.ofFloat(1.0f, 1.0f)
+        );
+
+        PropertyValuesHolder scaleYHolder = PropertyValuesHolder.ofKeyframe(View.SCALE_Y,
+                Keyframe.ofFloat(0.0f, 1.0f),
+                Keyframe.ofFloat(0.1f, 1.01f),
+                Keyframe.ofFloat(0.2f, 1.01f),
+                Keyframe.ofFloat(0.3f, 1.02f),
+                Keyframe.ofFloat(0.4f, 1.02f),
+                Keyframe.ofFloat(0.5f, 1.03f),
+                Keyframe.ofFloat(0.6f, 1.01f),
+                Keyframe.ofFloat(0.7f, 1.01f),
+                Keyframe.ofFloat(0.8f, 1.02f),
+                Keyframe.ofFloat(0.9f, 1.02f),
+                Keyframe.ofFloat(1.0f, 1.0f)
+        );
+
+        mAnimator = ObjectAnimator.ofPropertyValuesHolder(mIntoTheNewWord, rotationHolder, scaleXHolder, scaleYHolder);
+        mAnimator.setDuration(1400);
+        mAnimator.setRepeatCount(-1);
     }
 
     //找到控件
@@ -114,14 +155,7 @@ public class MyPopupWindow extends PopupWindow {
 
         // 已登陆的时候为“进入新世界”按钮设置动画
         if (mIntoTheNewWord.getVisibility() == View.VISIBLE){
-
-            ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(mIntoTheNewWord,"rotation",0f,20f,-20f,0);
-            objectAnimator.setDuration(1000);
-
-            objectAnimator.setInterpolator(new AccelerateInterpolator());
-            objectAnimator.setRepeatCount(-1);
-            //mIntoTheNewWord.startAnimation(mRotateAnimation);
-            objectAnimator.start();
+            mAnimator.start();
         }
     }
 }
