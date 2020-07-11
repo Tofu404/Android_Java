@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="read_tv">已读</string>
+    <string name="top_tv">顶置</string>
+    <string name="delete_tv">删除</string>
+</resources>

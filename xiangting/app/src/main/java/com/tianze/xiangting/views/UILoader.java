@@ -20,6 +20,7 @@ public abstract class UILoader extends FrameLayout {
     private View successView;
     private View networkErrorView;
     private View emptyView;
+
     private OnNetworkErrorViewClickListener onNetworkViewClickListener = null;
 
     public UILoader(@NonNull Context context) {

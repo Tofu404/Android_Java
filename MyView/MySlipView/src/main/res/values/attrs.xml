@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MySlipView">
+        <attr name="functions" format="flags">
+            <flag name="delete" value="0" />
+            <flag name="read" value="1" />
+            <flag name="top" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>

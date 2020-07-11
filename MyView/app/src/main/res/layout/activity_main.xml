@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:mySimpleView="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <create.by.mysimpleview.MySimpleView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="200dp"
+        mySimpleView:MyTextColor="#000" />
 
+    <create.by.myslipview.MySlipView
+        android:id="@+id/my_slip_view"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#098"
+            android:gravity="center"
+            android:text="你好我是孔天泽"
+            android:textSize="26sp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </create.by.myslipview.MySlipView>
 
-</ScrollView>
+</LinearLayout>

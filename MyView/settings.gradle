@@ -1,2 +1,4 @@
+include ':MySlipView'
+include ':MySimpleView'
 include ':app'
 rootProject.name = "MyView"

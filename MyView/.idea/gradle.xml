@@ -12,6 +12,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/MySimpleView" />
+            <option value="$PROJECT_DIR$/MySlipView" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
