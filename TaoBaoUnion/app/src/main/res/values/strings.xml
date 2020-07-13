@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TaoBaoUnion</string>
+    <string name="home_navigation_item">首页</string>
+    <string name="recommend_navigation_item">精选</string>
+    <string name="discount_navigation_item">特惠</string>
+    <string name="search_navigation_item">搜索</string>
+</resources>
