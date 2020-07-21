@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home_item"
+        android:icon="@drawable/ic_scan"
+        app:showAsAction="always"
+        android:title="@string/home_navigation_item" />
+
+    <item
+        android:id="@+id/me_item"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_search"
+        android:title="@string/me_navigation_item" />
+</menu>

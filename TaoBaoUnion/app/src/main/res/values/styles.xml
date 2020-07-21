@@ -8,7 +8,7 @@
     </style>
 
     <style name="navigation_bar_style">
-        <item name="textSize" tools:ignore="SmallSp">12sp</item>
+        <item name="android:labelTextSize">8sp</item>
     </style>
 
 </resources>

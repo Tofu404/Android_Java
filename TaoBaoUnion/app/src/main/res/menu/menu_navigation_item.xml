@@ -6,17 +6,7 @@
         android:title="@string/home_navigation_item" />
 
     <item
-        android:id="@+id/recommend_item"
+        android:id="@+id/me_item"
         android:icon="@drawable/ic_recommend"
-        android:title="@string/recommend_navigation_item" />
-
-    <item
-        android:id="@+id/discount_item"
-        android:icon="@drawable/ic_discount"
-        android:title="@string/discount_navigation_item" />
-
-    <item
-        android:id="@+id/search_item"
-        android:icon="@drawable/ic_search"
-        android:title="@string/search_navigation_item" />
+        android:title="@string/me_navigation_item" />
 </menu>
