@@ -1,2 +1,3 @@
+include ':version2'
 rootProject.name='LoopPager'
 include ':app'

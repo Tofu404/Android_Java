@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Gank</string>
+    <string name="navigation_girl_item_title">妹纸</string>
+    <string name="navigation_ganhuo_item_title">干货</string>
+    <string name="navigation_me_item_title">我</string>
+</resources>

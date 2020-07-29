@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/girl"
+        android:icon="@drawable/ic_girl"
+        android:title="@string/navigation_girl_item_title" />
+
+    <item
+        android:id="@+id/ganhuo"
+        android:icon="@drawable/ic_ganhuo"
+        android:title="@string/navigation_ganhuo_item_title" />
+
+    <item
+        android:id="@+id/me"
+        android:icon="@drawable/ic_me"
+        android:title="@string/navigation_me_item_title" />
+</menu>
