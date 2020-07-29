@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:elevation="20dp"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    app:cardCornerRadius="20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ganhuo_icon"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_me"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textView1"
+            style="@style/style_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Android"
+            app:layout_constraintStart_toEndOf="@+id/ganhuo_icon"
+            app:layout_constraintTop_toTopOf="@+id/ganhuo_icon" />
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Android Animation"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView1"
+            app:layout_constraintTop_toTopOf="@+id/textView1" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="撒旦解放螺丝钉解放善良的老师肯定街坊邻居拉萨看得见发链接士大夫立刻螺丝钉解放链接就离开了了士大夫立刻据了解士大夫了士大夫"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ganhuo_icon"
+            app:layout_constraintStart_toStartOf="@+id/textView1"
+            app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="我是作者"
+            app:layout_constraintBottom_toBottomOf="@+id/ganhuo_icon"
+            app:layout_constraintStart_toEndOf="@+id/ganhuo_icon" />
+
+        <TextView
+            android:id="@+id/public_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:text="发布时间:3个月之前"
+            app:layout_constraintBottom_toBottomOf="@+id/ganhuo_icon"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

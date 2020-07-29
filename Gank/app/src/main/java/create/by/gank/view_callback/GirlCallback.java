@@ -9,6 +9,8 @@ public interface GirlCallback extends BaseCallback {
 
     void loaded(List<GirlBean.DataBean> data);
 
+    void loadMore(List<GirlBean.DataBean> data);
+
     void loadError();
 
     void loadEmpty();

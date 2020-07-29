@@ -1,13 +1,12 @@
 package create.by.gank.presenters;
 
 import create.by.gank.base.BasePresenter;
-import create.by.gank.view_callback.GirlCallback;
 
 public interface GirlPresenter extends BasePresenter {
 
-    void load();
+    void load(int currentPage, int dataNum);
 
-    void loadMore();
+    void loadMore(int pageNum,int countNum);
 
-    void refresh();
+    void refresh(int currentPage, int dataNum);
 }
