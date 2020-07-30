@@ -20,7 +20,7 @@ public class GanHuoPresenterImpl implements GanHuoPresenter {
 
     @Override
     public void load() {
-        RetrofitBuilder.build().getGanHuoCategory().enqueue(new Callback<GanHuoCategory>() {
+        RetrofitBuilder.build().getGanHuoCategoryData().enqueue(new Callback<GanHuoCategory>() {
             @Override
             public void onResponse(Call<GanHuoCategory> call, Response<GanHuoCategory> response) {
                 assert mGanHuoCallback != null;

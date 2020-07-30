@@ -5,7 +5,7 @@ import android.util.Log;
 import java.net.HttpURLConnection;
 
 import create.by.gank.base.BaseCallback;
-import create.by.gank.bean.GanHuoCategory;
+import create.by.gank.bean.GanHuoBean;
 import create.by.gank.network.Api;
 import create.by.gank.network.RetrofitBuilder;
 import create.by.gank.presenters.GanHuoDataPresenter;
@@ -22,9 +22,9 @@ public class GanHuoDataPresenterImpl implements GanHuoDataPresenter {
     @Override
     public void load(String type, int pageNum, int countNum) {
         assert callback != null;
-        sApi.getGanHuoCategory(type, pageNum, countNum).enqueue(new Callback<GanHuoCategory>() {
+        sApi.getGanHuoCategoryData(type, pageNum, countNum).enqueue(new Callback<GanHuoBean>() {
             @Override
-            public void onResponse(Call<GanHuoCategory> call, Response<GanHuoCategory> response) {
+            public void onResponse(Call<GanHuoBean> call, Response<GanHuoBean> response) {
                 if (response.code() == HttpURLConnection.HTTP_OK) {
                     if (response.body() != null && response.body().getData().size() > 0) {
                         callback.loaded(response.body().getData());
@@ -36,7 +36,7 @@ public class GanHuoDataPresenterImpl implements GanHuoDataPresenter {
             }
 
             @Override
-            public void onFailure(Call<GanHuoCategory> call, Throwable t) {
+            public void onFailure(Call<GanHuoBean> call, Throwable t) {
                 // TODO: 2020/7/29 输出故障信息
                 Log.e("tianze", "onFailure: 加载干货分类信息错误 == > " + t.getMessage());
                 callback.loadError();

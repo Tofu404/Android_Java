@@ -1,5 +1,6 @@
 package create.by.gank.network;
 
+import create.by.gank.bean.GanHuoBean;
 import create.by.gank.bean.GanHuoCategory;
 import create.by.gank.bean.GirlBean;
 import retrofit2.Call;
@@ -22,7 +23,7 @@ public interface Api {
      * @return
      */
     @GET("categories/GanHuo")
-    Call<GanHuoCategory> getGanHuoCategory();
+    Call<GanHuoCategory> getGanHuoCategoryData();
 
 
     /**
@@ -31,6 +32,9 @@ public interface Api {
      * @return
      */
     @GET("data/category/GanHuo/type/{type}/page/{pageNum}/count/{countNum}")
-    Call<GanHuoCategory> getGanHuoCategory(@Path("type") String type, @Path("pageNum") int pageNum, @Path("countNum") int countNum);
+    Call<GanHuoBean> getGanHuoCategoryData(@Path("type") String type, @Path("pageNum") int pageNum, @Path("countNum") int countNum);
+
+    @GET("/{path}")
+    Call<String> imageUrl(@Path("path") String path);
 
 }

@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -16,6 +17,7 @@ import create.by.gank.R;
 import create.by.gank.adapters.CategoryDataAdapter;
 import create.by.gank.base.BaseFragment;
 import create.by.gank.base.BasePresenter;
+import create.by.gank.bean.GanHuoBean;
 import create.by.gank.bean.GanHuoCategory;
 import create.by.gank.presenters.GanHuoDataPresenter;
 import create.by.gank.presenters.impl.GanHuoDataPresenterImpl;
@@ -30,6 +32,8 @@ public class GanHuoCategoryFragment extends BaseFragment implements GanHuoDataCa
 
     private int mCurrentPage = 1;
     private String mType;
+    private List<GanHuoBean.DataBean> mDataBeans = new ArrayList<>();
+    private CategoryDataAdapter mAdapter;
 
     @Override
     protected void init() {
@@ -47,9 +51,8 @@ public class GanHuoCategoryFragment extends BaseFragment implements GanHuoDataCa
             }
         });
         ganhuoDataRv.setLayoutManager(new LinearLayoutManager(getContext()));
-        CategoryDataAdapter adapter = new CategoryDataAdapter();
-        ganhuoDataRv.setAdapter(adapter);
-
+        mAdapter = new CategoryDataAdapter();
+        ganhuoDataRv.setAdapter(mAdapter);
     }
 
     @Override
@@ -66,8 +69,11 @@ public class GanHuoCategoryFragment extends BaseFragment implements GanHuoDataCa
     }
 
     @Override
-    public void loaded(List<GanHuoCategory.DataBean> data) {
-
+    public void loaded(List<GanHuoBean.DataBean> data) {
+        if (data != null) {
+            mDataBeans = data;
+            mAdapter.setData(data);
+        }
     }
 
     @Override
