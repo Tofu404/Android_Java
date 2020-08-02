@@ -1,5 +1,6 @@
 package create.by.gank.network;
 
+import create.by.gank.bean.ArticleBean;
 import create.by.gank.bean.GanHuoBean;
 import create.by.gank.bean.GanHuoCategory;
 import create.by.gank.bean.GirlBean;
@@ -34,7 +35,8 @@ public interface Api {
     @GET("data/category/GanHuo/type/{type}/page/{pageNum}/count/{countNum}")
     Call<GanHuoBean> getGanHuoCategoryData(@Path("type") String type, @Path("pageNum") int pageNum, @Path("countNum") int countNum);
 
-    @GET("/{path}")
-    Call<String> imageUrl(@Path("path") String path);
+
+    @GET("post/{post_id}")
+    Call<ArticleBean> getGanHuoArticle(@Path("post_id") String id);
 
 }

@@ -14,16 +14,16 @@ import java.util.List;
 
 import butterknife.BindView;
 import create.by.gank.R;
+import create.by.gank.activity.GanHuoDetailActivity;
 import create.by.gank.adapters.CategoryDataAdapter;
 import create.by.gank.base.BaseFragment;
 import create.by.gank.base.BasePresenter;
 import create.by.gank.bean.GanHuoBean;
-import create.by.gank.bean.GanHuoCategory;
 import create.by.gank.presenters.GanHuoDataPresenter;
 import create.by.gank.presenters.impl.GanHuoDataPresenterImpl;
 import create.by.gank.view_callback.GanHuoDataCallback;
 
-public class GanHuoCategoryFragment extends BaseFragment implements GanHuoDataCallback {
+public class GanHuoCategoryFragment extends BaseFragment implements GanHuoDataCallback, CategoryDataAdapter.CategoryDataListener {
 
     private static final int PAGE_SIZE = 10;
 
@@ -34,6 +34,7 @@ public class GanHuoCategoryFragment extends BaseFragment implements GanHuoDataCa
     private String mType;
     private List<GanHuoBean.DataBean> mDataBeans = new ArrayList<>();
     private CategoryDataAdapter mAdapter;
+    private GanHuoDataPresenter mGanHuoDataPresenter;
 
     @Override
     protected void init() {
@@ -52,15 +53,17 @@ public class GanHuoCategoryFragment extends BaseFragment implements GanHuoDataCa
         });
         ganhuoDataRv.setLayoutManager(new LinearLayoutManager(getContext()));
         mAdapter = new CategoryDataAdapter();
+        mAdapter.setCategoryDataListener(this);
         ganhuoDataRv.setAdapter(mAdapter);
     }
 
     @Override
     protected BasePresenter initPresenter() {
-        GanHuoDataPresenter ganHuoDataPresenter = new GanHuoDataPresenterImpl();
-        ganHuoDataPresenter.load(mType, mCurrentPage, PAGE_SIZE);
-        ganHuoDataPresenter.registerCallback(this);
-        return ganHuoDataPresenter;
+        mGanHuoDataPresenter = new GanHuoDataPresenterImpl();
+        mGanHuoDataPresenter.load(mType, mCurrentPage, PAGE_SIZE);
+        mGanHuoDataPresenter.registerCallback(this);
+        mGanHuoDataPresenter.registerCallback(mAdapter);
+        return mGanHuoDataPresenter;
     }
 
     @Override
@@ -77,8 +80,11 @@ public class GanHuoCategoryFragment extends BaseFragment implements GanHuoDataCa
     }
 
     @Override
-    public void loadMore() {
-
+    public void loadMore(List<GanHuoBean.DataBean> data) {
+        if (data!=null&&data.size()>0) {
+            mDataBeans.addAll(mDataBeans.size(),data);
+            mAdapter.setData(mDataBeans);
+        }
     }
 
     @Override
@@ -86,5 +92,22 @@ public class GanHuoCategoryFragment extends BaseFragment implements GanHuoDataCa
         Toast toast = Toast.makeText(getContext(), "", Toast.LENGTH_SHORT);
         toast.setText("加载数据出错");
         toast.show();
+        mCurrentPage--;
+    }
+
+    @Override
+    public void loadFinish() {
+
+    }
+
+    @Override
+    public void recyclerViewLoadMore() {
+        mCurrentPage++;
+        mGanHuoDataPresenter.loadMore(mType,mCurrentPage,PAGE_SIZE);
+    }
+
+    @Override
+    public void onItemClick(String id) {
+        GanHuoDetailActivity.start(getContext(),id);
     }
 }

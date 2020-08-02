@@ -1,5 +1,6 @@
 package create.by.gank.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class GanHuoBean {

@@ -7,4 +7,5 @@
     <color name="colorBlue">#2C63FF</color>
     <color name="colorBlack">#000000</color>
     <color name="colorTransparency">#00000000</color>
+    <color name="colorBG">#F0F0F0</color>
 </resources>

@@ -1,4 +1,4 @@
-package create.by.gank;
+package create.by.gank.activity;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -18,6 +18,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import create.by.gank.R;
 import create.by.gank.base.BaseFragment;
 import create.by.gank.fragments.GanHuoFragment;
 import create.by.gank.fragments.GirlFragment;

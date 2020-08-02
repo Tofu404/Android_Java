@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import create.by.gank.activity.GirlDetailActivity;
 import create.by.gank.R;
 import create.by.gank.adapters.GirlAdapter;
 import create.by.gank.base.BaseFragment;
@@ -22,7 +23,7 @@ import create.by.gank.presenters.GirlPresenter;
 import create.by.gank.presenters.impl.GirlPresenterImpl;
 import create.by.gank.view_callback.GirlCallback;
 
-public class GirlFragment extends BaseFragment implements GirlCallback, GirlAdapter.LoadMoreListener {
+public class GirlFragment extends BaseFragment implements GirlCallback, GirlAdapter.RecyclerViewListener {
 
     @BindView(R.id.girl_rv)
     RecyclerView girlRv;
@@ -50,7 +51,7 @@ public class GirlFragment extends BaseFragment implements GirlCallback, GirlAdap
         });
         girlRv.setLayoutManager(new LinearLayoutManager(getContext()));
         mGirlAdapter = new GirlAdapter();
-        mGirlAdapter.setLoadMoreListener(this);
+        mGirlAdapter.setRecyclerViewListener(this);
         girlRv.setAdapter(mGirlAdapter);
 
         refresh.setColorSchemeColors(Color.BLUE, Color.GREEN);
@@ -108,10 +109,15 @@ public class GirlFragment extends BaseFragment implements GirlCallback, GirlAdap
     }
 
     @Override
-    public void RecyclerViewLoadMore() {
+    public void recyclerViewLoadMore() {
         if (mGirlPresenter != null) {
             mCurrentPage++;
             mGirlPresenter.loadMore(mCurrentPage, DATA_NUM);
         }
+    }
+
+    @Override
+    public void onItemClick(GirlBean.DataBean dataBean) {
+        GirlDetailActivity.start(getContext(),dataBean);
     }
 }

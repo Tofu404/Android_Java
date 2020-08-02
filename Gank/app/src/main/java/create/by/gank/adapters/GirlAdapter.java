@@ -30,7 +30,7 @@ public class GirlAdapter extends RecyclerView.Adapter<GirlAdapter.MyHolder> {
 
     }
 
-    private LoadMoreListener mLoadMoreListener = null;
+    private RecyclerViewListener mRecyclerViewListener = null;
 
     //是否加载更多标记，为true表示正在加载更多，防止多次触发加载更多
     private boolean isLoadingMore = false;
@@ -83,11 +83,21 @@ public class GirlAdapter extends RecyclerView.Adapter<GirlAdapter.MyHolder> {
             holder.slogan.setText(replace);
             Glide.with(holder.girlPic).load(dataBean.getUrl()).into(holder.girlPic);
         }
+        
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO: 2020/8/1 点击事件
+                if (mRecyclerViewListener != null) {
+                    mRecyclerViewListener.onItemClick(girlBeanList.get(position));
+                }
+            }
+        });
 
         if (position == getItemCount() - 2 && !isLoadingMore && !isLadAllData) {
             //todo:触发加载更多
-            if (mLoadMoreListener != null) {
-                mLoadMoreListener.RecyclerViewLoadMore();
+            if (mRecyclerViewListener != null) {
+                mRecyclerViewListener.recyclerViewLoadMore();
             }
             isLoadingMore = true;
         }
@@ -124,12 +134,13 @@ public class GirlAdapter extends RecyclerView.Adapter<GirlAdapter.MyHolder> {
         }
     }
 
-    public void setLoadMoreListener(LoadMoreListener loadMoreListener) {
-        mLoadMoreListener = loadMoreListener;
+    public void setRecyclerViewListener(RecyclerViewListener recyclerViewListener) {
+        mRecyclerViewListener = recyclerViewListener;
     }
 
-    public interface LoadMoreListener {
-        void RecyclerViewLoadMore();
+    public interface RecyclerViewListener {
+        void recyclerViewLoadMore();
+        void onItemClick(GirlBean.DataBean dataBean);
     }
 
     //recycler view 尾部的状态

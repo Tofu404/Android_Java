@@ -1,5 +1,6 @@
 package create.by.gank.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class GirlBean {
@@ -50,7 +51,7 @@ public class GirlBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable {
         private String _id;
         private String author;
         private String category;

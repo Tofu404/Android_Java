@@ -7,9 +7,11 @@ import create.by.gank.bean.GanHuoBean;
 
 public interface GanHuoDataCallback extends BaseCallback {
 
-    void loaded(List<GanHuoBean.DataBean> data);
+    default void loaded(List<GanHuoBean.DataBean> data){}
 
-    void loadMore();
+    void loadMore(List<GanHuoBean.DataBean> data);
 
     void loadError();
+
+    void loadFinish();
 }

@@ -6,6 +6,6 @@ public interface GanHuoDataPresenter extends BasePresenter {
 
     void load(String type,int pageNum,int countNum);
 
-    void loadMore();
+    void loadMore(String type,int pageNum,int countNum);
 
 }

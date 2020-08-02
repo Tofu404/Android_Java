@@ -6,8 +6,7 @@
     android:clickable="true"
     android:elevation="20dp"
     android:focusable="true"
-    android:foreground="?attr/selectableItemBackgroundBorderless"
-    app:cardCornerRadius="20dp">
+    android:foreground="?attr/selectableItemBackgroundBorderless">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
