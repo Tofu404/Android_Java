@@ -1,10 +1,13 @@
 package create.by.gank.activity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.transition.Slide;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.widget.TextView;
@@ -12,6 +15,10 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.transition.Explode;
+import androidx.transition.Fade;
+import androidx.transition.Transition;
 
 import com.bumptech.glide.Glide;
 import com.github.chrisbanes.photoview.PhotoView;
@@ -44,6 +51,7 @@ public class GirlDetailActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        getWindow().requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
         setContentView(R.layout.activity_girl_detail);
         ButterKnife.bind(this);
         GirlBean.DataBean dataBean = (GirlBean.DataBean) getIntent().getSerializableExtra("GirlBean.DataBean");
@@ -82,9 +90,9 @@ public class GirlDetailActivity extends AppCompatActivity {
         });
     }
 
-    public static void start(Context context, GirlBean.DataBean dataBean) {
-        Intent starter = new Intent(context, GirlDetailActivity.class);
+    public static void start(Activity activity, GirlBean.DataBean dataBean, View v) {
+        Intent starter = new Intent(activity, GirlDetailActivity.class);
         starter.putExtra("GirlBean.DataBean", dataBean);
-        context.startActivity(starter);
+        activity.startActivity(starter, ActivityOptionsCompat.makeSceneTransitionAnimation(activity,v,"girl_list_item").toBundle());
     }
 }

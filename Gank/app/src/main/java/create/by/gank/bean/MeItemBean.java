@@ -78,4 +78,16 @@ public class MeItemBean {
     public void setGroupId(int groupId) {
         this.groupId = groupId;
     }
+
+    @Override
+    public String toString() {
+        return "MeItemBean{" +
+                "imageId=" + imageId +
+                ", userName='" + userName + '\'' +
+                ", userAccount='" + userAccount + '\'' +
+                ", item_title='" + item_title + '\'' +
+                ", itemType=" + itemType +
+                ", groupId=" + groupId +
+                '}';
+    }
 }

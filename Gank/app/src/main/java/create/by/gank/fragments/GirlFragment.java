@@ -3,6 +3,7 @@ package create.by.gank.fragments;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -117,7 +118,7 @@ public class GirlFragment extends BaseFragment implements GirlCallback, GirlAdap
     }
 
     @Override
-    public void onItemClick(GirlBean.DataBean dataBean) {
-        GirlDetailActivity.start(getContext(),dataBean);
+    public void onItemClick(GirlBean.DataBean dataBean, ImageView v) {
+        GirlDetailActivity.start(getActivity(),dataBean,v);
     }
 }

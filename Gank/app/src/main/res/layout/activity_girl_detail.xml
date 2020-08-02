@@ -9,6 +9,7 @@
         android:id="@+id/photo_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:transitionName="girl_list_item"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

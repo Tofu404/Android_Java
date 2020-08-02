@@ -27,8 +27,6 @@ public class GanHuoDetailActivity extends AppCompatActivity {
 
     @BindView(R.id.mdv)
     MarkdownView mdv;
-    //    @BindView(R.id.ganhuo)
-//    TextView ganhuoTv;
     private String mArticleId;
 
     @Override
@@ -68,7 +66,7 @@ public class GanHuoDetailActivity extends AppCompatActivity {
     }
 
     private void showDetail(ArticleBean.DataBean bean) {
-        if (bean != null) {
+        if (bean != null && bean.getMarkdown().length() > 0) {
             mdv.loadMarkdown(bean.getMarkdown());
         }
     }

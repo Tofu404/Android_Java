@@ -87,15 +87,13 @@ public class GirlAdapter extends RecyclerView.Adapter<GirlAdapter.MyHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: 2020/8/1 点击事件
                 if (mRecyclerViewListener != null) {
-                    mRecyclerViewListener.onItemClick(girlBeanList.get(position));
+                    mRecyclerViewListener.onItemClick(girlBeanList.get(position),holder.girlPic);
                 }
             }
         });
 
         if (position == getItemCount() - 2 && !isLoadingMore && !isLadAllData) {
-            //todo:触发加载更多
             if (mRecyclerViewListener != null) {
                 mRecyclerViewListener.recyclerViewLoadMore();
             }
@@ -140,7 +138,7 @@ public class GirlAdapter extends RecyclerView.Adapter<GirlAdapter.MyHolder> {
 
     public interface RecyclerViewListener {
         void recyclerViewLoadMore();
-        void onItemClick(GirlBean.DataBean dataBean);
+        void onItemClick(GirlBean.DataBean dataBean, ImageView v);
     }
 
     //recycler view 尾部的状态
