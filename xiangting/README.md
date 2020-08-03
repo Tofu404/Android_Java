@@ -4,46 +4,46 @@
 
 - **推荐页面**
 
-<img src="app_pic\ddb097c5be39e9bb8c205b4e5cc9ccb.jpg" alt="ddb097c5be39e9bb8c205b4e5cc9ccb" style="zoom:50%;" />
+<img src="app_pic\ddb097c5be39e9bb8c205b4e5cc9ccb.jpg" alt="ddb097c5be39e9bb8c205b4e5cc9ccb" style="zoom: 33%;" />
 
 
 
 - **专辑详情**
 
-<img src="app_pic\9077de839467144ef23dab82cfb72d7.jpg" alt="9077de839467144ef23dab82cfb72d7" style="zoom:50%;" />
+<img src="app_pic\9077de839467144ef23dab82cfb72d7.jpg" alt="9077de839467144ef23dab82cfb72d7" style="zoom: 33%;" />
 
 
 
 - **订阅界面**（没有订阅的时候界面为空白，订阅之后才会有数据显示）
 
-<img src="app_pic\13691565e20872f73f61ad9829ea2a6.jpg" alt="13691565e20872f73f61ad9829ea2a6" style="zoom:50%;" />
+<img src="app_pic\13691565e20872f73f61ad9829ea2a6.jpg" alt="13691565e20872f73f61ad9829ea2a6" style="zoom: 33%;" />
 
 
 
 - **历史记录页面**
 
-<img src="app_pic\9dd7d7bff8701be9053d7b4f78a4a83.jpg" alt="9dd7d7bff8701be9053d7b4f78a4a83" style="zoom:50%;" />
+<img src="app_pic\9dd7d7bff8701be9053d7b4f78a4a83.jpg" alt="9dd7d7bff8701be9053d7b4f78a4a83" style="zoom: 33%;" />
 
 
 
 - **播放界面**
 
-<img src="app_pic\fbd5b09fcb3c63599303bfb436455eb.jpg" alt="fbd5b09fcb3c63599303bfb436455eb" style="zoom:50%;" />
+<img src="app_pic\fbd5b09fcb3c63599303bfb436455eb.jpg" alt="fbd5b09fcb3c63599303bfb436455eb" style="zoom: 33%;" />
 
 
 
 - **播放列表界面**
 
-<img src="app_pic\e9fa4920b4bafb25cdbf1fa8a8f72fb.jpg" alt="e9fa4920b4bafb25cdbf1fa8a8f72fb" style="zoom:50%;" />
+<img src="app_pic\e9fa4920b4bafb25cdbf1fa8a8f72fb.jpg" alt="e9fa4920b4bafb25cdbf1fa8a8f72fb" style="zoom: 33%;" />
 
 
 
 - **搜索界面**
 
-<img src="app_pic\405bceb16d8dc728549b283fe06945e.jpg" alt="405bceb16d8dc728549b283fe06945e" style="zoom:50%;" />
+<img src="app_pic\405bceb16d8dc728549b283fe06945e.jpg" alt="405bceb16d8dc728549b283fe06945e" style="zoom: 33%;" />
 
 
 
 - **个人信息界面**
 
-<img src="app_pic\34895f8debe00028e180af16a8de027.jpg" alt="34895f8debe00028e180af16a8de027" style="zoom:50%;" />
+<img src="app_pic\34895f8debe00028e180af16a8de027.jpg" alt="34895f8debe00028e180af16a8de027" style="zoom: 33%;" />
