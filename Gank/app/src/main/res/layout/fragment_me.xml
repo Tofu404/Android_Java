@@ -4,6 +4,7 @@
     android:scrollbars="none"
     android:overScrollMode="never"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:id="@+id/group_container"
         android:layout_width="match_parent"
