@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.GridView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
 
         //获取手机上安装的app列表
         getApps();
+        init();
+    }
+
+    private void init() {
+        GridView gridView = findViewById(R.id.grid_view);
+        LauncherAdapter adapter = new LauncherAdapter();
+        mApps.size();
+        adapter.setAppData(mApps);
+        gridView.setAdapter(adapter);
     }
 
     private void getApps() {
