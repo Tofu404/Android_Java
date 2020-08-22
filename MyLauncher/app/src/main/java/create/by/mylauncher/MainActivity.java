@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         GridView gridView = findViewById(R.id.grid_view);
-        LauncherAdapter adapter = new LauncherAdapter();
+        LauncherAdapter adapter = new LauncherAdapter(this);
         mApps.size();
         adapter.setAppData(mApps);
         gridView.setAdapter(adapter);

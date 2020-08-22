@@ -1,5 +1,6 @@
 package create.by.mylauncher;
 
+import android.content.Context;
 import android.content.pm.ResolveInfo;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +16,11 @@ import java.util.List;
 public class LauncherAdapter extends BaseAdapter {
 
     private List<ResolveInfo> mApps = new ArrayList<>();
+    private Context mContext;
+
+    public LauncherAdapter(Context context){
+        this.mContext = context;
+    }
 
     @Override
     public int getCount() {
@@ -46,8 +52,9 @@ public class LauncherAdapter extends BaseAdapter {
         ResolveInfo appInfo = mApps.get(position);
         // TODO: 2020/8/22 获取app的icon
         viewHolder.mAppIcon.setImageResource(0);
-        Log.e("nihao", "getView: " + appInfo.activityInfo.loadIcon(parent.getContext().getPackageManager()));
-        viewHolder.mAppTitle.setText(appInfo.activityInfo.loadLabel(parent.getContext().getPackageManager()));
+        Log.e("nihao", "getView: " + appInfo.activityInfo.loadIcon(mContext.getPackageManager()));
+        viewHolder.mAppIcon.setImageDrawable(appInfo.activityInfo.loadIcon(mContext.getPackageManager()));
+        viewHolder.mAppTitle.setText(appInfo.activityInfo.loadLabel(mContext.getPackageManager()));
         return convertView;
     }
 
