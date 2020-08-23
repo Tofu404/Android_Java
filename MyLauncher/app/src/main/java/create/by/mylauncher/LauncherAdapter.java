@@ -2,7 +2,6 @@ package create.by.mylauncher;
 
 import android.content.Context;
 import android.content.pm.ResolveInfo;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,12 +12,16 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *  用于显示app图标的适配器
+ */
 public class LauncherAdapter extends BaseAdapter {
 
     private List<ResolveInfo> mApps = new ArrayList<>();
     private Context mContext;
+    private OnItemClickListener mOnItemClickListener = null;
 
-    public LauncherAdapter(Context context){
+    public LauncherAdapter(Context context) {
         this.mContext = context;
     }
 
@@ -50,11 +53,15 @@ public class LauncherAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         ResolveInfo appInfo = mApps.get(position);
-        // TODO: 2020/8/22 获取app的icon
-        viewHolder.mAppIcon.setImageResource(0);
-        Log.e("nihao", "getView: " + appInfo.activityInfo.loadIcon(mContext.getPackageManager()));
-        viewHolder.mAppIcon.setImageDrawable(appInfo.activityInfo.loadIcon(mContext.getPackageManager()));
-        viewHolder.mAppTitle.setText(appInfo.activityInfo.loadLabel(mContext.getPackageManager()));
+        viewHolder.mAppIcon.setImageDrawable(appInfo.loadIcon(mContext.getPackageManager()));
+        viewHolder.mAppTitle.setText(appInfo.loadLabel(mContext.getPackageManager()));
+
+        convertView.setOnClickListener((v) -> {
+            if (mOnItemClickListener != null) {
+                mOnItemClickListener.onItemClick(appInfo);
+            }
+        });
+
         return convertView;
     }
 
@@ -68,5 +75,14 @@ public class LauncherAdapter extends BaseAdapter {
         if (apps != null) {
             this.mApps = apps;
         }
+    }
+
+
+    public interface OnItemClickListener {
+        void onItemClick(ResolveInfo appInfo);
+    }
+
+    public void setOnItemClickListener(LauncherAdapter.OnItemClickListener onItemClickListener) {
+        this.mOnItemClickListener = onItemClickListener;
     }
 }

@@ -1,24 +1,25 @@
 package create.by.mylauncher;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.ActivityOptions;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.GridView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements LauncherAdapter.OnItemClickListener {
 
     private static final String TAG = "tianze";
 
-    private List<ResolveInfo> mApps = new ArrayList<>();
+    private static List<ResolveInfo> sAppsInfo = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,29 +33,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //获取手机上安装的app列表
-        getApps();
+        getAppsInfo();
         init();
     }
 
     private void init() {
         GridView gridView = findViewById(R.id.grid_view);
         LauncherAdapter adapter = new LauncherAdapter(this);
-        mApps.size();
-        adapter.setAppData(mApps);
+        adapter.setOnItemClickListener(this);
+        sAppsInfo.size();
+        adapter.setAppData(sAppsInfo);
         gridView.setAdapter(adapter);
     }
 
-    private void getApps() {
-        Intent launcherIntent = new Intent(Intent.ACTION_MAIN,null);
+    /**
+     * 获取手机上的全部应用信息
+     */
+    private void getAppsInfo() {
+        Intent launcherIntent = new Intent(Intent.ACTION_MAIN, null);
         launcherIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-        mApps = getPackageManager().queryIntentActivities(launcherIntent, 0);
-
-        //打印包名的信息
-        for (ResolveInfo app : mApps) {
-            Log.e(TAG, "getApps: app的包名 == > "+ app.activityInfo.packageName );
-            Log.e(TAG, "getApps: app的icon == > "+ app.loadIcon(getPackageManager()) );
-            Log.e(TAG, "getApps: app的应用名称 == > "+ app.loadLabel(getPackageManager()).toString() );
-        }
+        sAppsInfo = getPackageManager().queryIntentActivities(launcherIntent, 0);
     }
 
     /**
@@ -62,5 +60,27 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override
     public void onBackPressed() {
+    }
+
+
+    /**
+     * 点击app icon 进行跳转
+     *
+     * @param appInfo
+     */
+    @Override
+    public void onItemClick(ResolveInfo appInfo) {
+        if (appInfo != null) {
+            //获取应用包名
+            String packageName = appInfo.activityInfo.packageName;
+            //获取应用的启动类名称
+            String launcherClassName = appInfo.activityInfo.name;
+            //获取生成app的特定标识
+            ComponentName componentName = new ComponentName(packageName, launcherClassName);
+            Intent intent = new Intent();
+            intent.setComponent(componentName);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent, ActivityOptions.makeCustomAnimation(this, R.anim.task_open_enter, R.anim.no_anim).toBundle());
+        }
     }
 }
