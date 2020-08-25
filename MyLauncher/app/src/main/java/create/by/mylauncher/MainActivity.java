@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements LauncherAdapter.O
             Intent intent = new Intent();
             intent.setComponent(componentName);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            //启动activity动画
             startActivity(intent, ActivityOptions.makeCustomAnimation(this, R.anim.task_open_enter, R.anim.no_anim).toBundle());
         }
     }
