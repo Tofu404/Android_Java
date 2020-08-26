@@ -3,4 +3,4 @@ git add .
 git status
 git commit -m "push to git"
 git push
-git pause
+pause
