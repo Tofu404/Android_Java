@@ -1,0 +1,3 @@
+include ':aidlclient'
+include ':aidlservice'
+rootProject.name = "AidlLearning"
