@@ -1,0 +1,2 @@
+include ':app'
+include ':my_dagger_demo'
