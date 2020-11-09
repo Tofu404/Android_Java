@@ -24,6 +24,18 @@ public class MainActivity extends AppCompatActivity {
     private String infoStr = "";
     private IMyAidlInterface mIMyAidlInterface;
 
+    ICallback.Stub mStub = new ICallback.Stub() {
+        @Override
+        public void succeed(String info) throws RemoteException {
+            Log.e("nihao", "我是从服务器返回的信息: == > " + info);
+        }
+
+        @Override
+        public void fail(String info) throws RemoteException {
+
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,17 +81,7 @@ public class MainActivity extends AppCompatActivity {
             public void onServiceConnected(ComponentName name, IBinder service) {
                 mIMyAidlInterface = IMyAidlInterface.Stub.asInterface(service);
                 try {
-                    mIMyAidlInterface.registCallBack(new ICallback.Stub() {
-                        @Override
-                        public void succeed(String info) throws RemoteException {
-                            Log.e("nihao", "我是从服务器返回的信息: == 》" + info);
-                        }
-
-                        @Override
-                        public void fail(String info) throws RemoteException {
-
-                        }
-                    });
+                    mIMyAidlInterface.registCallBack(mStub);
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }
@@ -89,24 +91,13 @@ public class MainActivity extends AppCompatActivity {
             public void onServiceDisconnected(ComponentName name) {
                 if (mIMyAidlInterface != null) {
                     try {
-                        mIMyAidlInterface.unRegistCallBack(new ICallback.Stub() {
-                            @Override
-                            public void succeed(String info) throws RemoteException {
-                                Log.e("nihao", "我是从服务器返回的信息: == > " + info);
-                            }
-
-                            @Override
-                            public void fail(String info) throws RemoteException {
-
-                            }
-                        });
+                        mIMyAidlInterface.unRegistCallBack(mStub);
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }
                 }
             }
         };
-
         bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
     }
 }

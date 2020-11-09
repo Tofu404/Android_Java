@@ -9,7 +9,7 @@ import android.util.Log;
 
 public class MyService extends Service {
 
-    private RemoteCallbackList<ICallback> mCallbackList = new RemoteCallbackList<>();
+    private RemoteCallbackList<ICallback> mCallbackList = new RemoteCallbackList<>();//用这个类来保存回调类
 
     public MyService() {
     }
@@ -20,6 +20,11 @@ public class MyService extends Service {
             @Override
             public void printLog(String info) throws RemoteException {
                 Log.e("nihao", "收到的信息 == > " + info);
+                /**
+                 * mCallbackList.beginBroadcast();
+                 * mCallbackList.finishBroadcast();
+                 * 这两个成对出现、使用
+                 */
                 mCallbackList.beginBroadcast();
                 for (int i = 0; i < mCallbackList.getRegisteredCallbackCount(); i++) {
                     mCallbackList.getBroadcastItem(i).succeed(info);
