@@ -1,0 +1,4 @@
+include ':service'
+include ':client'
+include ':aidl_lib'
+rootProject.name = "AidlCallback"
